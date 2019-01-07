@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+
+  {% include 'partials/navbar.html' %}
+
+  <form method="POST">
+    {{ login_form.as_p }}
+    {% csrf_token %}
+    <input type="submit" name="login">
+  </form>
+
+</body>
+</html>

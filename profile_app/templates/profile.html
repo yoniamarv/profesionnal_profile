@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile - {{ user.username }}</title>
+</head>
+<body>
+
+  {% include 'partials/navbar.html' %}
+
+  {% if request.user.id == user.id %}
+    <a href="{% url 'profile_app:profile_edit' user.id %}">Edit Profile</a>
+  {% endif %}
+
+  <h3>username: {{ user.username }}</h3>
+  <h3>email: {{ user.email }}</h3>
+  <h3>first name: {{ user.first_name }}</h3>
+  <h3>last name: {{ user.last_name }}</h3>
+
+</body>
+</html>

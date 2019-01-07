@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profiles</title>
+</head>
+<body>
+
+  {% include 'partials/navbar.html' %}
+
+  <h1>Profile List</h1>
+  {% for user in users %}
+    <p><a href="{% url 'profile_app:profile' user.id %}">{{ user.username }}</a> - {{ user.email }}</p>
+    <hr>
+  {% endfor %}
+
+</body>
+</html>

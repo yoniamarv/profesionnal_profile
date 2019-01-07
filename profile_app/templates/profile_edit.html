@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Edit - {{ user.username }}</title>
+</head>
+<body>
+
+  {% include 'partials/navbar.html' %}
+
+  <form method="POST">
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    {% csrf_token %}
+    <input type="submit" name="save">
+  </form>
+
+</body>
+</html>
